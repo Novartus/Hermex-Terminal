@@ -1,6 +1,6 @@
 <div align="center">
 
-# ⚡ FinTrack
+# ⚡ Hermex
 ### Institutional HFT & Statistical Market Analytics Terminal
 
 [![React 19](https://img.shields.io/badge/React-19.x-61DAFB?logo=react&logoColor=black)](https://react.dev/)
@@ -9,29 +9,41 @@
 [![Vite 8](https://img.shields.io/badge/Vite-8.x-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-emerald.svg)](LICENSE)
 
-**FinTrack** is an institutional-grade, zero-backend market analytics and high-frequency trading terminal. It delivers sub-100ms real-time market microstructure analysis, mathematical risk models, and interactive visualizations — running **100% client-side** in your web browser.
+**Hermex** is an institutional-grade, zero-backend market analytics and high-frequency trading terminal. It delivers sub-100ms real-time market microstructure analysis, mathematical risk models, and interactive visualizations — running **100% client-side** in your web browser.
 
-[Live Demo](https://novartus.github.io/) • [Architecture](#-architecture) • [Features](#-core-capabilities) • [Workspaces](#-workspaces) • [Quick Start](#-quick-start)
+[Live Demo](https://hermex-terminal.netlify.app) • [Why Hermex?](#-why-hermex) • [Architecture](#-architecture) • [Features](#-core-capabilities) • [Workspaces](#-workspaces) • [Quick Start](#-quick-start)
 
 </div>
 
 ---
 
-## 🌟 Why FinTrack?
+## 🏛 Why "Hermex"?
+
+> *"Named after **Hermes** — the swift Greek god of commerce, boundaries, and trade, known for his winged sandals that permitted instantaneous transit between realms."*
+
+In high-frequency trading and algorithmic execution, **speed, timing, and frictionless exchange** dictate the boundary between alpha and slippage. 
+
+**Hermex** combines:
+- **Hermes (Ἑρμῆς)**: The patron divinity of merchants, trade flow, and swift cross-venue transit.
+- **Ex (Exchange & Execution)**: Sub-100ms L2 limit order book matching, Kyle's Lambda slippage modeling, and decentralized public WebSocket streaming.
+
+---
+
+## 🌟 What Makes Hermex Different?
 
 Modern institutional trading terminals (like Bloomberg Terminal or TradingView Pro) typically require massive backend infrastructures, expensive subscription APIs, and server-side computations.
 
-**FinTrack reinvents this approach:**
-- **Zero Backend Required**: Directly streams live exchange WebSockets from public Binance endpoints (`depth20@100ms`, `aggTrade`, `kline_1m`) with zero proxy servers.
+**Hermex reinvents this approach:**
+- **Zero Backend Required**: Directly streams live exchange WebSockets from public Binance endpoints (`depth20@100ms`, `aggTrade`, `kline_1m`) with zero proxy servers or API paywalls.
 - **Ultra-Low Latency (15–40ms)**: Offloads heavy quantitative mathematics (Monte Carlo simulations, GARCH volatility, Hawkes processes) to a dedicated multithreaded **Web Worker**.
 - **Pure Minimalist Design**: Institutional white canvas (`#ffffff` / `#f8fafc`) crafted with crisp typography, mathematical clarity, and responsive mobile-first views.
 - **Zero External Assets**: Custom procedural Web Audio synthesis for sound effects and native SVG/Canvas/WebGL visualizers without external audio or icon files.
 
 ---
 
-## 🏛 Architecture
+## 🏗 Architecture
 
-FinTrack follows a decoupled, reactive event-driven architecture designed for zero UI stuttering and rock-solid 60–120 FPS performance:
+Hermex follows a decoupled, reactive event-driven architecture designed for zero UI stuttering and rock-solid 60–120 FPS performance:
 
 ```mermaid
 flowchart TD
@@ -49,7 +61,7 @@ flowchart TD
     subgraph WorkerLayer [Dedicated Background Web Worker]
         LOB[Limit Order Book Engine\nQueue Priority & Matching]
         Hawkes[Hawkes Process Simulation\nArrival Bursts & Clustering]
-        Quant[Off-Thread Quant Cruncing\nVPIN, OFI, GARCH, VaR, D3 Chord]
+        Quant[Off-Thread Quant Crunching\nVPIN, OFI, GARCH, VaR, D3 Chord]
     end
 
     subgraph Presentation [Pure White Institutional UI]
@@ -94,7 +106,7 @@ flowchart TD
 | **🔥 Dynamic Liquidity Heatmap (Bookmap Style)** | High-resolution HTML5 Canvas rendering of historical depth density, bid/ask depth walls, and whale liquidity clusters. |
 | **⚡ Sub-100ms L2 Depth Ladder** | Millisecond-accurate order book ladder showing micro-price weighted spread, depth ratio, and cumulative order volume. |
 | **🤖 Smart Algo Order Router** | Live simulation of institutional execution algorithms including **TWAP**, **VWAP**, **POV (15%)**, and **Iceberg** orders with Kyle's Lambda slippage estimation. |
-| **🔊 Native Web Audio Synthesizer** | Harmonic sine/sawtooth audio triggers for whale orders (>$100k), algo order fills, and toxicity alerts without audio files. |
+| **🔊 Native Web Audio Synthesizer** | Harmonic sine/sawtooth audio triggers for whale orders (>$100k), algo order fills, and toxicity alerts without external audio files. |
 
 ---
 
@@ -125,8 +137,8 @@ Navigate effortlessly via keyboard shortcuts or the **Spotlight Command Palette 
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/novartus/FinTrack.git
-cd FinTrack
+git clone https://github.com/novartus/Hermex.git
+cd Hermex
 
 # 2. Install dependencies
 npm install

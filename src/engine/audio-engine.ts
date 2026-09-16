@@ -1,11 +1,11 @@
 export class AudioEngine {
-  private static readonly STORAGE_KEY = 'fintrack_audio_muted';
+  private static readonly STORAGE_KEY = 'hermex_audio_muted';
   private ctx: AudioContext | null = null;
   private isMuted: boolean = false;
   private masterGain: GainNode | null = null;
 
   constructor() {
-    const savedMute = localStorage.getItem(AudioEngine.STORAGE_KEY);
+    const savedMute = localStorage.getItem(AudioEngine.STORAGE_KEY) || localStorage.getItem('fintrack_audio_muted');
     this.isMuted = savedMute ? JSON.parse(savedMute) : false;
   }
 

@@ -1,6 +1,6 @@
 {
-  "name": "FinTrack Financial Terminal",
-  "short_name": "FinTrack",
+  "name": "Hermex Financial Terminal",
+  "short_name": "Hermex",
   "description": "High-frequency financial market telemetry, quantitative analytics, and trading visualization dashboard.",
   "start_url": "./",
   "display": "standalone",

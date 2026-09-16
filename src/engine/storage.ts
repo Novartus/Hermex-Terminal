@@ -3,7 +3,7 @@
 import { TradeTick, AlgoOrder, Candle } from './types';
 
 export class LocalDatabase {
-  private static readonly DB_NAME: string = 'FinTrack_Storage';
+  private static readonly DB_NAME: string = 'Hermex_Storage';
   private static readonly DB_VERSION: number = 1;
   private dbPromise: Promise<IDBDatabase> | null = null;
 

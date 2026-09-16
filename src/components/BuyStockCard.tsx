@@ -231,7 +231,7 @@ export const BuyStockCard: React.FC<BuyStockCardProps> = ({
             type="button"
             onClick={(e) => {
               e.preventDefault();
-              alert('Simulation & Trading Terms: All market analytics and orders executed on FinTrack are subject to standard paper trading execution guidelines.');
+              alert('Simulation & Trading Terms: All market analytics and orders executed on Hermex are subject to standard paper trading execution guidelines.');
             }}
             className="text-slate-700 hover:underline font-medium cursor-pointer"
           >

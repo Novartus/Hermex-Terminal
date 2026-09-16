@@ -1,4 +1,4 @@
-# FinTrack Robots.txt - Institutional Trading Terminal
+# Hermex Robots.txt - Institutional Trading Terminal
 User-agent: *
 Allow: /
 
@@ -7,4 +7,4 @@ Disallow: /.vite-cache/
 Disallow: /node_modules/
 
 # Canonical XML Sitemap
-Sitemap: https://novartus.github.io/FinTrack/sitemap.xml
+Sitemap: https://hermex-terminal.netlify.app/sitemap.xml

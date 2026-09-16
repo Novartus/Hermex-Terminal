@@ -1,4 +1,4 @@
-// Barrel Export for FinTrack Utilities
+// Barrel Export for Hermex Utilities
 export * from './formatters';
 export * from './market-helpers';
 export * from './quant-helpers';

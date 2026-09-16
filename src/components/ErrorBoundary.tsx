@@ -25,7 +25,7 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
   }
 
   public componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
-    console.error('[FinTrack ErrorBoundary] Uncaught exception:', error, errorInfo);
+    console.error('[Hermex ErrorBoundary] Uncaught exception:', error, errorInfo);
     this.setState({ errorInfo });
   }
 
@@ -58,13 +58,12 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
                 {this.props.fallbackTitle}
               </h4>
               <p className="text-xs text-slate-500 max-w-xs">
-                {this.state.error?.message || 'Component failed to render.'}
+                An isolated widget error occurred. Other terminal views remain active.
               </p>
             </div>
             <button
-              type="button"
               onClick={() => this.setState({ hasError: false, error: null })}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 text-xs font-medium text-slate-700 transition-colors shadow-xs"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 text-xs font-semibold text-slate-700 hover:bg-slate-50 transition-colors shadow-2xs"
             >
               <RefreshCw className="w-3.5 h-3.5" />
               Retry Component
@@ -73,10 +72,10 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
         );
       }
 
-      // Full page fallback for root boundary
+      // Full Terminal Crash Screen
       return (
-        <div className="min-h-screen w-full bg-white flex items-center justify-center p-6 text-slate-900 select-none">
-          <div className="max-w-md w-full bg-white rounded-2xl border border-slate-200 shadow-xl p-8 text-center space-y-6">
+        <div className="min-h-screen w-full bg-[#f8fafc] flex items-center justify-center p-4 font-sans select-none">
+          <div className="max-w-md w-full bg-white rounded-3xl border border-slate-200 shadow-xl p-8 text-center space-y-6">
             <div className="mx-auto w-16 h-16 rounded-full bg-rose-50 flex items-center justify-center border border-rose-100 text-rose-500">
               <AlertTriangle className="w-8 h-8" />
             </div>
@@ -86,7 +85,7 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
                 Application Exception Detected
               </h1>
               <p className="text-sm text-slate-500 leading-relaxed">
-                FinTrack encountered an unexpected state in the trading telemetry pipeline. The application has safely halted this view to prevent memory corruption.
+                Hermex encountered an unexpected state in the trading telemetry pipeline. The application has safely halted this view to prevent memory corruption.
               </p>
             </div>
 

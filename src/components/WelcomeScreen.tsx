@@ -71,11 +71,11 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
           <div className="flex items-center gap-2.5 sm:gap-3">
             <div className="w-8 h-8 rounded-xl bg-slate-900 text-white flex items-center justify-center font-black text-xs sm:text-sm shadow-sm shrink-0">
-              FT
+              HX
             </div>
             <div>
               <span className="font-extrabold text-sm sm:text-base tracking-tight text-slate-900 block leading-tight">
-                FinTrack Terminal
+                Hermex Terminal
               </span>
               <span className="text-[10px] sm:text-[11px] text-slate-400 font-medium hidden xs:block">
                 High-Frequency Trading & Statistical Trends
@@ -242,7 +242,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
       <footer className="w-full bg-white border-t border-slate-200/80 mt-auto select-none">
         <div className="max-w-7xl mx-auto py-4 px-4 sm:px-6 text-xs text-slate-500 text-center flex flex-col sm:flex-row items-center justify-between gap-2.5">
           <span className="font-medium text-slate-500">
-            &copy; {new Date().getFullYear()} FinTrack Institutional HFT Analytics Platform. All rights reserved.
+            &copy; {new Date().getFullYear()} Hermex Institutional HFT Analytics Platform. All rights reserved.
           </span>
           <span className="text-slate-500">
             Crafted by{' '}

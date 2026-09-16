@@ -5,7 +5,7 @@ export function useHashRoute(defaultView: 'WELCOME' | 'DASHBOARD' = 'WELCOME') {
     const hash = window.location.hash.toLowerCase();
     if (hash.includes('dashboard')) return 'DASHBOARD';
     if (hash === '#/' || hash === '' || hash === '#') return 'WELCOME';
-    const saved = localStorage.getItem('fintrack_active_view');
+    const saved = localStorage.getItem('hermex_active_view') || localStorage.getItem('fintrack_active_view');
     return (saved === 'DASHBOARD' || saved === 'WELCOME') ? saved : defaultView;
   };
 
@@ -13,7 +13,7 @@ export function useHashRoute(defaultView: 'WELCOME' | 'DASHBOARD' = 'WELCOME') {
 
   // Sync state to URL hash and localStorage
   useEffect(() => {
-    localStorage.setItem('fintrack_active_view', currentView);
+    localStorage.setItem('hermex_active_view', currentView);
     const targetHash = currentView === 'DASHBOARD' ? '#/dashboard' : '#/';
     if (window.location.hash !== targetHash) {
       window.history.replaceState(null, '', targetHash);

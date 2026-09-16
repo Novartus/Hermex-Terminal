@@ -11,13 +11,13 @@ export const App: React.FC = () => {
   const { currentView, navigateToDashboard, navigateToWelcome } = useHashRoute('WELCOME');
 
   const [symbol, setSymbol] = useState<string>(() => {
-    return localStorage.getItem('fintrack_active_symbol') || 'BTCUSDT';
+    return localStorage.getItem('hermex_active_symbol') || localStorage.getItem('fintrack_active_symbol') || 'BTCUSDT';
   });
   const [dataSource, setDataSource] = useState<MarketDataSource>('BINANCE_LIVE');
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
 
   const [activeWorkspace, setActiveWorkspace] = useState<TerminalWorkspace>(() => {
-    const saved = localStorage.getItem('fintrack_active_workspace') as TerminalWorkspace;
+    const saved = (localStorage.getItem('hermex_active_workspace') || localStorage.getItem('fintrack_active_workspace')) as TerminalWorkspace;
     const valid: TerminalWorkspace[] = ['OVERVIEW', 'QUANT_TRENDS', 'MICROSTRUCTURE', 'ALGO_LAB', 'PORTFOLIO_RISK'];
     return valid.includes(saved) ? saved : 'OVERVIEW';
   });
@@ -25,16 +25,17 @@ export const App: React.FC = () => {
   // Pure clean white theme guarantee
   useEffect(() => {
     document.documentElement.classList.remove('dark');
+    localStorage.removeItem('hermex_theme');
     localStorage.removeItem('fintrack_theme');
   }, []);
 
   // Save workspace & symbol persistence
   useEffect(() => {
-    localStorage.setItem('fintrack_active_workspace', activeWorkspace);
+    localStorage.setItem('hermex_active_workspace', activeWorkspace);
   }, [activeWorkspace]);
 
   useEffect(() => {
-    localStorage.setItem('fintrack_active_symbol', symbol);
+    localStorage.setItem('hermex_active_symbol', symbol);
   }, [symbol]);
 
   // Global keyboard shortcut: Cmd+K / Ctrl+K
@@ -166,7 +167,7 @@ export const App: React.FC = () => {
           <footer className="w-full bg-white border-t border-slate-200/80 mt-auto select-none">
             <div className="max-w-[1920px] mx-auto py-3.5 px-4 sm:px-6 text-xs text-slate-500 text-center flex flex-col sm:flex-row items-center justify-between gap-2.5">
               <span className="font-medium text-slate-500">
-                &copy; {new Date().getFullYear()} FinTrack Institutional HFT Analytics Platform. All rights reserved.
+                &copy; {new Date().getFullYear()} Hermex Institutional HFT Analytics Platform. All rights reserved.
               </span>
               <span className="text-slate-500">
                 Crafted by{' '}

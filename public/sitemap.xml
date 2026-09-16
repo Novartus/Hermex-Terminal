@@ -5,14 +5,14 @@
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <!-- Homepage / Welcome Experience -->
   <url>
-    <loc>https://novartus.github.io/FinTrack/</loc>
+    <loc>https://hermex-terminal.netlify.app/</loc>
     <lastmod>2026-09-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <!-- Live Market Terminal & Quantitative Dashboard -->
   <url>
-    <loc>https://novartus.github.io/FinTrack/#/dashboard</loc>
+    <loc>https://hermex-terminal.netlify.app/#/dashboard</loc>
     <lastmod>2026-09-16</lastmod>
     <changefreq>always</changefreq>
     <priority>0.9</priority>

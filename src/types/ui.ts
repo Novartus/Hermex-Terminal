@@ -1,4 +1,4 @@
-// FinTrack Shared Component & UI Types
+// Hermex Shared Component & UI Types
 import { ReactNode } from 'react';
 import {
   TerminalWorkspace,

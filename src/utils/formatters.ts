@@ -1,4 +1,4 @@
-// Centralized Formatting Utilities for FinTrack
+// Centralized Formatting Utilities for Hermex
 // Eliminates code duplication across all dashboard components
 
 /**
