@@ -1,0 +1,16 @@
+{
+  "name": "FinTrack Financial Terminal",
+  "short_name": "FinTrack",
+  "description": "High-frequency financial market telemetry, quantitative analytics, and trading visualization dashboard.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+# FinTrack Robots.txt - Institutional Trading Terminal
+User-agent: *
+Allow: /
+
+# Exclude internal build/cache paths if deployed directly
+Disallow: /.vite-cache/
+Disallow: /node_modules/
+
+# Canonical XML Sitemap
+Sitemap: https://novartus.github.io/FinTrack/sitemap.xml
